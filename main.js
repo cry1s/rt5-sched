@@ -94,7 +94,7 @@ window.onload = function () {
 			break;
 	}
 	if( studyWeekNum !== undefined ){
-		upper.innerHTML = `${studyWeekNum}${(studyWeekNum === 3)?"-я":"-ая"} неделя`;
+		upper.innerHTML = `${studyWeekNum%4}${(studyWeekNum === 3)?"-я":"-ая"} неделя`;
 	}
 
 	wrapper.childNodes[day * 2 - 1].childNodes[3].style.borderColor = "#39b9bf";
