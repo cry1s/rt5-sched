@@ -195,29 +195,29 @@ draw();
 
 //день недели
 window.onload = function () {
-	let title = document.getElementById("title");
+	let lower = document.getElementById("lower");
 	let day = (new Date()).getDay();
 	switch (day) {
 		case 1:
-			title.innerHTML = "ПО-721<span class=\"lil\"> понедельник</span>";
+			lower.innerHTML = "понедельник";
 			break;
 		case 2:
-			title.innerHTML = "ПО-721<span class=\"lil\"> вторник</span>";
+			lower.innerHTML = "вторник";
 			break;
 		case 3:
-			title.innerHTML = "ПО-721<span class=\"lil\"> среда</span>";
+			lower.innerHTML = "среда";
 			break;
 		case 4:
-			title.innerHTML = "ПО-721<span class=\"lil\"> четверг</span>";
+			lower.innerHTML = "четверг";
 			break;
 		case 5:
-			title.innerHTML = "ПО-721<span class=\"lil\"> пятница</span>";
+			lower.innerHTML = "пятница";
 			break;
 		case 6:
-			title.innerHTML = "ПО-721<span class=\"lil\"> суббота</span>";
+			lower.innerHTML = "суббота";
 			break;
 		case 0:
-			title.innerHTML = "ПО-721<span class=\"lil\"> воскресенье</span>";
+			lower.innerHTML = "воскресенье";
 			break;
 	}
 	wrapper.childNodes[day * 2 - 1].childNodes[3].style.borderColor = "#39b9bf";
@@ -225,19 +225,6 @@ window.onload = function () {
 	wrapper.childNodes[day * 2 - 1].childNodes[1].style.color = "#39b9bf";
 };
 //конец дня недели
-setInterval(window.onload, 1000);
-//изменение группы по нажатию на титульник
-// function changeGroup() {
-// 	if(group === 1){
-// 		group = 2;
-// 		draw();
-// 	} else {
-// 		group = 1;
-// 		draw();
-// 	}
-// 	console.log(group);
-// }
-//конец кода изменения группы по нажатию на титульник
 
 //работа с часами
 var date = new Date();
