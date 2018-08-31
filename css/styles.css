@@ -1,0 +1,120 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	min-width: 320px;
+	font-size: 1em;
+	font-family: "Roboto", sans-serif;
+}
+
+.header {
+	text-align: center;
+	font-weight: 700;
+	font-size: 1em;
+	background-color: #BBDEFB;
+	color: #fff;
+	user-select: none;
+}
+
+.header__text {
+	text-align: center;
+	font-weight: 700;
+	font-size: 3em;
+	background-color: #4a76a8;
+	color: #d7e2ec;
+	/*cursor: pointer;*/
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+	font-weight: 400;
+}
+
+.schedule {
+	max-width: 620px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 24px auto 0;
+}
+
+.item {
+	flex: 1 1 300px;
+	max-width: 300px;
+	margin: 0 0 20px;
+}
+
+.timetable {
+	width: 100%;
+	table-layout: fixed;
+	border: 1px solid #cbd2e0;
+	border-radius: 7px;
+	background-color: #edeef0;
+	box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+}
+
+.item p {
+	text-align: center;
+	font-size: 1.2em;
+	color: #656565;
+	margin: 0 0 5px;
+}
+
+.weeks {
+	font-size: 0.8em;
+	line-height: 0.8em;
+	height: 34px;
+}
+
+.weeks:nth-child(2) .odd {
+	position: relative;
+	top: -10%;
+}
+
+.weeks:nth-child(2) .even {
+	position: relative;
+	top: 8%;
+}
+
+td {
+	border: 1px solid #b3cef1;
+	padding: 5px 7px;
+	background-color: #fff;
+	height: 33px;
+}
+
+td:nth-child(1) {
+	border-radius: 5px 0 0 5px;
+}
+
+td:nth-child(2) {
+	width: 16%;
+	text-align: center;
+	border-radius: 0 5px 5px 0;
+}
+
+.lil {
+	font-size: 0.6em;
+	opacity: .5;
+}
+
+.fizika {
+	color: black;
+}
+
+.fizika:visited {
+	color: black
+}
+
+.clock {
+	min-width: 42px;
+	min-height: 20px;
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	color: rgb(233, 240, 237);
+	background-color: rgba(74, 118, 168, 0.3);
+	padding: 5px;
+	border-radius: 0px 0px 7px;
+}

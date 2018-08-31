@@ -1,0 +1,19 @@
+
+
+
+@media screen and (max-width: 600px){
+	
+	.schedule {
+		justify-content: center;
+	}
+
+	.header {
+		font-size: 0.5em;
+		background-color: red;
+	}
+
+	.clock {
+		font-size: 0.5em;
+		padding: 3px;
+	}
+}
