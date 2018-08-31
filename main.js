@@ -68,6 +68,7 @@ draw();
 //день недели
 window.onload = function () {
 	let lower = document.getElementById("lower");
+	let upper = document.getElementById("upper");
 	let day = (new Date()).getDay();
 	switch (day) {
 		case 1:
@@ -92,6 +93,10 @@ window.onload = function () {
 			lower.innerHTML = "воскресенье";
 			break;
 	}
+	if( studyWeekNum !== undefined ){
+		upper.innerHTML = `${studyWeekNum}${(studyWeekNum === 3)?"-я":"-ая"} неделя`;
+	}
+
 	wrapper.childNodes[day * 2 - 1].childNodes[3].style.borderColor = "#39b9bf";
 	wrapper.childNodes[day * 2 - 1].childNodes[3].style.boxShadow = "0px 4px 6px 0 #d7d8db, 0 2px 2px 1px #e3e4e8";
 	wrapper.childNodes[day * 2 - 1].childNodes[1].style.color = "#39b9bf";
