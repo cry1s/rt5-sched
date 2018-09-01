@@ -11,6 +11,10 @@
 		font-size: 0.5em;
 	}
 
+	.header-info {
+		font-size: 0.6rem;
+	}
+
 	.clock {
 		font-size: 0.5em;
 		padding: 3px;
