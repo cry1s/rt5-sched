@@ -7,8 +7,12 @@ var links 	= document.getElementsByClassName("nav-item");
 
 menu.addEventListener("click", () => {
 	event.preventDefault();
-	btn.classList.toggle('menu_active');
+	btn
+		.classList
+		.toggle('menu_active');
 	for( var i = 0 ; i<links.length ; i++ ){
-		links[i].classList.toggle("nav-item_active");
+		links[i]
+			.classList
+			.toggle("nav-item_active");
 	}
 });

@@ -104,13 +104,6 @@ td:nth-child(2) {
     opacity: 0.5;
 }
 
-.fizika {
-    color: black;
-}
-
-.fizika:visited {
-    color: black;
-}
 
 .clock {
     min-width: 42px;
@@ -145,7 +138,7 @@ td:nth-child(2) {
     -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
-    z-index: 2;
+    z-index: 3;
 }
 
 .menu-burger {
@@ -224,7 +217,7 @@ td:nth-child(2) {
 }
 
 .menu-nav {
-	z-index: 1;
+	z-index: 2;
 }
 
 .nav-item_active:first-child {

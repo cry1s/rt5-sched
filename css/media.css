@@ -22,5 +22,21 @@
 
 	.menu-wrapper {
 		position: fixed;
+		left: auto;
+		top: auto;
+		right: 45px;
+		bottom: 45px;
+	}
+
+	.nav-item_active:first-child {
+		transform: translateY(-60px);
+	}
+
+	.nav-item_active:nth-child(2) {
+		transform: translate(-42.42px, -42.42px);
+	}
+
+	.nav-item_active:nth-child(3) {
+		transform: translateX(-60px);
 	}
 }

@@ -199,33 +199,33 @@ if (currentLesson !== 0) {
         .insertBefore(clock, null);
 }
 
-// function left() {
-//     clock.innerHTML = `
-// 1 half: ${Math.floor(
-//         lessonTime[currentLesson - 1][0].start / 60
-//     )}:${ (lessonTime[currentLesson - 1][0].start % 60) < 10
-//         ? "0" + lessonTime[currentLesson - 1][0].start % 60
-//         : lessonTime[currentLesson - 1][0].start % 60}
-//  -
-// ${Math.floor(
-//             lessonTime[currentLesson - 1][0].end / 60
-//         )}:${ (lessonTime[currentLesson - 1][0].end % 60) < 10
-//             ? "0" + lessonTime[currentLesson - 1][0].end % 60
-//             : lessonTime[currentLesson - 1][0].end % 60}
-// <br>
-// 2 half: ${Math.floor(
-//                 lessonTime[currentLesson - 1][1].start / 60
-//             )}:${ (lessonTime[currentLesson - 1][1].start % 60) < 10
-//                 ? "0" + lessonTime[currentLesson - 1][1].start % 60
-//                 : lessonTime[currentLesson - 1][1].start % 60}
-//  -
-// ${Math.floor(
-//                     lessonTime[currentLesson - 1][1].end / 60
-//                 )}:${ (lessonTime[currentLesson - 1][1].end % 60) < 10
-//                     ? "0" + lessonTime[currentLesson - 1][1].end % 60
-//                     : lessonTime[currentLesson - 1][1].end % 60}`;
-// }
+function left() {
+    clock.innerHTML = `
+1 half: ${Math.floor(
+        lessonTime[currentLesson - 1][0].start / 60
+    )}:${ (lessonTime[currentLesson - 1][0].start % 60) < 10
+        ? "0" + lessonTime[currentLesson - 1][0].start % 60
+        : lessonTime[currentLesson - 1][0].start % 60}
+ -
+${Math.floor(
+            lessonTime[currentLesson - 1][0].end / 60
+        )}:${ (lessonTime[currentLesson - 1][0].end % 60) < 10
+            ? "0" + lessonTime[currentLesson - 1][0].end % 60
+            : lessonTime[currentLesson - 1][0].end % 60}
+<br>
+2 half: ${Math.floor(
+                lessonTime[currentLesson - 1][1].start / 60
+            )}:${ (lessonTime[currentLesson - 1][1].start % 60) < 10
+                ? "0" + lessonTime[currentLesson - 1][1].start % 60
+                : lessonTime[currentLesson - 1][1].start % 60}
+ -
+${Math.floor(
+                    lessonTime[currentLesson - 1][1].end / 60
+                )}:${ (lessonTime[currentLesson - 1][1].end % 60) < 10
+                    ? "0" + lessonTime[currentLesson - 1][1].end % 60
+                    : lessonTime[currentLesson - 1][1].end % 60}`;
+}
 
-// left();
-// setInterval(left, 1000);
+left();
+setInterval(left, 1000);
 //конец работы с часами
