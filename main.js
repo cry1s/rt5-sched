@@ -24,26 +24,60 @@ function showLesson(lesson) {
 		`
 
     } else {
-        return `
-			<tr class="lesson weeks">
-				<td class="lesson_item">
-	      	<div class="odd">
-	        	<span class="lil">1,3</span> ${lesson.odd[0]}
-	        </div>
-	        <div class="even">
-	          <span class="lil">2,4</span> ${lesson.even[0]}
-	        </div>
-	      </td>
-	      <td class="lesson_item weeks">
-	        <div class="odd">
-	          ${lesson.odd[1]}
-	        </div>
-	        <div class="even">
-	          ${lesson.even[1]}
-	        </div>
-	      </td>
-	    </tr>
-		`
+        if (isOneWeek) {
+
+            if(studyWeekNum%2 === 0){
+                return `
+                <tr class="lesson" id="lessonLine">
+                    ${ (lesson === "")
+                    ? `
+                        <td class="lesson_item"></td>
+                        <td class="lesson_item"></td>
+                    `
+                    : `
+                        <td class="lesson_item">${lesson.even[0]}</td>
+                        <td class="lesson_item">${lesson.even[1]}</td>
+                    `}
+                </tr>
+                `
+            } else {
+                return `
+                <tr class="lesson" id="lessonLine">
+                    ${ (lesson === "")
+                        ? `
+                        <td class="lesson_item"></td>
+                        <td class="lesson_item"></td>
+                    `
+                        : `
+                        <td class="lesson_item">${lesson.odd[0]}</td>
+                        <td class="lesson_item">${lesson.odd[1]}</td>
+                    `}
+                </tr>
+                `
+            }
+
+        } else {
+            return `
+				<tr class="lesson weeks">
+					<td class="lesson_item">
+					<div class="odd">
+					<span class="lil">1,3</span> ${lesson.odd[0]}
+				</div>
+				<div class="even">
+					<span class="lil">2,4</span> ${lesson.even[0]}
+				</div>
+				</td>
+				<td class="lesson_item weeks">
+				<div class="odd">
+					${lesson.odd[1]}
+				</div>
+				<div class="even">
+					${lesson.even[1]}
+				</div>
+				</td>
+			</tr>
+			`
+        }
     }
 
 }
