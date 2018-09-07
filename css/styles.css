@@ -100,7 +100,7 @@ td:nth-child(2) {
 }
 
 .lil {
-    font-size: 0.6em;
+    font-size: 0.7em;
     opacity: 0.5;
 }
 
@@ -131,8 +131,8 @@ td:nth-child(2) {
 .menu-button {
     height: 45px;
     width: 45px;
-	 cursor: pointer;
-	 position: relative;
+    cursor: pointer;
+    position: relative;
     border-radius: 50%;
     background-color: #5180b5;
     -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
@@ -190,44 +190,44 @@ td:nth-child(2) {
     z-index: 0;
     display: block;
     border-radius: 50%;
-	 background-color: #5180b5;
-	 color: #f2f3f5;
+    background-color: #5180b5;
+    color: #f2f3f5;
     width: 35px;
     height: 35px;
     line-height: 35px;
     text-align: center;
     left: 5px;
-	 top: 5px;
-	 transform: translate(0);
+    top: 5px;
+    transform: translate(0);
     -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
 }
 
 .nav-item:first-child {
-	 transition: .5s ease;
+    transition: .5s ease;
 }
 
 .nav-item:nth-child(2) {
-	 transition: .5s ease 0.1s;
+    transition: .5s ease 0.1s;
 }
 
 .nav-item:nth-child(3) {
-	 transition: .5s ease 0.2s;
+    transition: .5s ease 0.2s;
 }
 
 .menu-nav {
-	z-index: 2;
+    z-index: 2;
 }
 
 .nav-item_active:first-child {
-	transform: translateY(60px);
+    transform: translateY(60px);
 }
 
 .nav-item_active:nth-child(2) {
-	transform: translate(42.42px, 42.42px);
+    transform: translate(42.42px, 42.42px);
 }
 
 .nav-item_active:nth-child(3) {
-	transform: translateX(60px);
+    transform: translateX(60px);
 }

@@ -26,10 +26,12 @@ function showLesson(lesson) {
     } else {
         if (isOneWeek) {
 
-            if(studyWeekNum%2 === 0){
+            if (studyWeekNum % 2 === 0) {
                 return `
                 <tr class="lesson" id="lessonLine">
-                    ${ (lesson === "")
+                    ${ (
+                    lesson === ""
+                )
                     ? `
                         <td class="lesson_item"></td>
                         <td class="lesson_item"></td>
@@ -43,12 +45,14 @@ function showLesson(lesson) {
             } else {
                 return `
                 <tr class="lesson" id="lessonLine">
-                    ${ (lesson === "")
-                        ? `
+                    ${ (
+                    lesson === ""
+                )
+                    ? `
                         <td class="lesson_item"></td>
                         <td class="lesson_item"></td>
                     `
-                        : `
+                    : `
                         <td class="lesson_item">${lesson.odd[0]}</td>
                         <td class="lesson_item">${lesson.odd[1]}</td>
                     `}
