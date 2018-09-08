@@ -224,14 +224,6 @@ function currentLessonFunc() {
 currentLessonFunc();
 setInterval(() => currentLessonFunc(), 1000 / 30);
 
-if (currentLesson !== 0) {
-
-    let clock = document.createElement("div");
-    clock.className = "clock";
-    document
-        .getElementById("wrapper")
-        .insertBefore(clock, null);
-}
 
 function left() {
     clock.innerHTML = `
@@ -260,6 +252,13 @@ ${Math.floor(
                     : lessonTime[currentLesson - 1][1].end % 60}`;
 }
 
-left();
-setInterval(left, 1000);
+if (currentLesson !== 0) {
+    clock = document.createElement("div");
+    clock.className = "clock";
+    document
+        .getElementById("wrapper")
+        .insertBefore(clock, null);
+    left();
+    setInterval(left, 1000);
+}
 //конец работы с часами
