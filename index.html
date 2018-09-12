@@ -34,7 +34,7 @@
                     class="nav-item">
                     <i class="fas fa-download"></i>
                 </a>
-                <a href="http://bsac.by/" target="_blank" class="nav-item">
+                <a href="#" id="modal" class="nav-item">
                     <i class="fas fa-globe"></i>
                 </a>
                 <a href="#" id="OneWeek" class="nav-item">
@@ -61,6 +61,13 @@
             <div class="schedule" id="lessonTime"></div>
 
         </div>
+
+        <div class="modal-wrapper" id="modal-wrapper">
+            <div class="modal-item" onclick="event.stopPropagation()">
+                <div class="modal-close-btn">X</div>
+            </div>
+        </div>
+
         <script src="stolen.js">
             alert("Error: JS is not loaded");
         </script>

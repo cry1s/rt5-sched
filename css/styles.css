@@ -75,11 +75,13 @@ body {
 .weeks:nth-child(2) .odd {
     position: relative;
     top: -10%;
+    z-index: 1;
 }
 
 .weeks:nth-child(2) .even {
     position: relative;
     top: 8%;
+    z-index: 1;
 }
 
 td {
@@ -134,6 +136,7 @@ td:nth-child(2) {
     position: absolute;
     left: 40px;
     top: 35px;
+    z-index: 2;
 }
 
 .menu-button {
@@ -238,4 +241,57 @@ td:nth-child(2) {
 
 .nav-item_active:nth-child(3) {
 	transform: translateX(60px);
+}
+
+.modal-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 155;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, .4);
+    visibility: hidden;
+}
+
+.modal-item {
+    background-color: #e6e8ea;
+    width: 680px;
+    height: 500px;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 12px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 5px 5px 12px 0 rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 12px 0 rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.modal-close-btn {
+    background-color: rgb(218, 218, 218);
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    user-select: none;
+    -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    background-color: rgb(194, 194, 194);
+}
+.modal-close-btn:active {
+    background-color: rgb(170, 170, 170);
+}
+.modal_active{
+    visibility: visible;
 }

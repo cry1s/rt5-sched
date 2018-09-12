@@ -2,6 +2,8 @@ var btn 		= document.getElementById("menu-burger");
 var menu 	= document.getElementById("menu-open");
 var links 	= document.getElementsByClassName("nav-item");
 var oneWeek_btn =document.getElementById("OneWeek");
+var modal 	= document.getElementById("modal");
+var modalwrapper 	= document.getElementById("modal-wrapper");
 var isOneWeek = false;
 
 menu.addEventListener("click", () => {
@@ -24,4 +26,18 @@ oneWeek_btn.addEventListener("click", () => {
 		isOneWeek = false;
 	}
 	draw();
+})
+
+function modalShowHide(){
+	modalwrapper.classList.toggle("modal_active");
+}
+
+modalwrapper.addEventListener("click", modalShowHide);
+document
+	.getElementsByClassName("modal-close-btn")[0]
+	.addEventListener("click", modalShowHide);
+
+modal.addEventListener("click", () => {
+	event.preventDefault();
+	modalShowHide();
 })
