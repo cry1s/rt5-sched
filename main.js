@@ -23,6 +23,7 @@ function showLesson(lesson) {
 			</tr>
 		`
 
+        
     } else {
         if (isOneWeek) {
 
