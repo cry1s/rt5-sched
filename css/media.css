@@ -39,4 +39,21 @@
 	.nav-item_active:nth-child(3) {
 		transform: translateX(-60px);
 	}
+
+	.modal-item {
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(230, 232, 234, .9);
+	}
+
+	.modal-close-btn {
+		font-size: 50px;
+		right: 50px;
+		top: 50px;
+	}
+
+	.modal-content p {
+		line-height: 1.6em;
+		font-size: 24px;
+	}
 }
