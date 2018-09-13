@@ -43,7 +43,7 @@
 	.modal-item {
 		width: 100vw;
 		height: 100vh;
-		background-color: rgba(230, 232, 234, .9);
+		background-color: rgba(230, 232, 234, .95);
 	}
 
 	.modal-close-btn {
