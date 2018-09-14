@@ -190,30 +190,37 @@ td:nth-child(2) {
     z-index: 0;
     display: block;
     border-radius: 50%;
-    background-color: #5180b5;
-    color: #f2f3f5;
+	background-color: #5180b5;
+	color: #f2f3f5;
     width: 35px;
     height: 35px;
     line-height: 35px;
     text-align: center;
     left: 5px;
-    top: 5px;
-    transform: translate(0);
+	top: 5px;
+	transform: translate(0);
     -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
     -moz-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
     box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.5);
 }
 
+.nav-item:hover{
+    background-color: #4d74a0;
+}
+.nav-item:active{
+    background-color: #45658a;
+}
+
 .nav-item:first-child {
-    transition: .5s ease;
+	 transition: transform .5s ease;
 }
 
 .nav-item:nth-child(2) {
-    transition: .5s ease 0.1s;
+	 transition: transform .5s ease 0.1s;
 }
 
 .nav-item:nth-child(3) {
-    transition: .5s ease 0.2s;
+	 transition: transform .5s ease 0.2s;
 }
 
 .menu-nav {
@@ -229,5 +236,71 @@ td:nth-child(2) {
 }
 
 .nav-item_active:nth-child(3) {
-    transform: translateX(60px);
+	transform: translateX(60px);
+}
+
+.modal-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 155;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0, .4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease;
+}
+
+.modal-item {
+    background-color: #e6e8ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 680px;
+    height: 500px;
+    border-radius: 5px;
+    -webkit-box-shadow: 5px 5px 12px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 5px 5px 12px 0 rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 12px 0 rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.modal-close-btn {
+    /* background-color: rgb(218, 218, 218); */
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    user-select: none;
+    /* -webkit-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.2); */
+    cursor: pointer;
+}
+
+.modal-close-btn:hover {
+    background-color: rgb(221, 221, 221);
+}
+.modal-close-btn:active {
+    background-color: rgb(212, 212, 212);
+}
+.modal_active{
+    visibility: visible;
+    opacity: 1;
+    /* background-color: rgba(0,0,0, .4); */
+}
+
+.modal-content{
+    font-size: 28px;
+    text-align: center;
+    line-height: 1.4em;
 }

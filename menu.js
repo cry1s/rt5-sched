@@ -1,7 +1,10 @@
-var btn = document.getElementById("menu-burger");
-var menu = document.getElementById("menu-open");
-var links = document.getElementsByClassName("nav-item");
-var oneWeek_btn = document.getElementById("OneWeek");
+var btn 		= document.getElementById("menu-burger");
+var menu 	= document.getElementById("menu-open");
+var links 	= document.getElementsByClassName("nav-item");
+var oneWeek_btn =document.getElementById("OneWeek");
+var modal 	= document.getElementById("modal");
+var modalwrapper 	= document.getElementById("modal-wrapper");
+var mcont	= document.getElementsByClassName("modal-content")[0];
 var isOneWeek = false;
 
 menu.addEventListener("click", () => {
