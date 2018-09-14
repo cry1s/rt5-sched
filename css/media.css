@@ -47,13 +47,15 @@
 	}
 
 	.modal-close-btn {
-		font-size: 50px;
+		font-size: 24px;
+		width: 25px;
+		height: 25px;
 		right: 50px;
 		top: 50px;
 	}
 
 	.modal-content p {
 		line-height: 1.6em;
-		font-size: 24px;
+		font-size: 20px;
 	}
 }
