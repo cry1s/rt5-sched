@@ -1,8 +1,8 @@
-var btn = document.getElementById("menu-burger");
-var menu = document.getElementById("menu-open");
-var links = document.getElementsByClassName("nav-item");
-var oneWeek_btn = document.getElementById("OneWeek");
-var isOneWeek = false;
+var btn = document.getElementById("menu-burger"),
+	menu = document.getElementById("menu-open"),
+	links = document.getElementsByClassName("nav-item"),
+	oneWeek_btn = document.getElementById("OneWeek"),
+	isOneWeek = false;
 
 menu.addEventListener("click", () => {
 	event.preventDefault();

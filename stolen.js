@@ -1,5 +1,5 @@
-var studyWeekNum;
-var calStartDOW = 1; //С чего начинать неделю, в США день 0 (Вс), в мире день 1 (Пн)
+var studyWeekNum,
+	calStartDOW = 1; //С чего начинать неделю, в США день 0 (Вс), в мире день 1 (Пн)
 
 function getWeekNum(day, month, year) { //Корректно определяем номер недели в году
     if (calStartDOW === 0) 

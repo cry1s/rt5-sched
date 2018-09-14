@@ -1,9 +1,9 @@
 //само расписание
-var group = 1;
-var wrapper = document.getElementById("app");
-var less = document.getElementById("lessonTime");
-var currentTime;
-var currentLesson;
+var group = 1,
+	wrapper = document.getElementById("app"),
+	less = document.getElementById("lessonTime"),
+	currentTime,
+	currentLesson;
 
 //начало построения таблицы расписания
 function showLesson(lesson) {
