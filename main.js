@@ -1,9 +1,9 @@
 //само расписание
 var group = 1,
-	wrapper = document.getElementById("app"),
-	less = document.getElementById("lessonTime"),
-	currentTime,
-	currentLesson;
+    wrapper = document.getElementById("app"),
+    less = document.getElementById("lessonTime"),
+    currentTime,
+    currentLesson;
 
 //начало построения таблицы расписания
 function showLesson(lesson) {
@@ -228,42 +228,40 @@ function currentLessonFunc() {
 currentLessonFunc();
 setInterval(() => currentLessonFunc(), 1000 / 30);
 
-if (currentLesson !== 0) {
-
-    let clock = document.createElement("div");
-    clock.className = "clock";
-    document
-        .getElementById("wrapper")
-        .insertBefore(clock, null);
-}
-
 function left() {
-    clock.innerHTML = `
+    if (currentLesson !== 0) {
+
+        var clock = document.createElement("div");
+        clock.className = "clock";
+        document
+            .getElementById("wrapper")
+            .insertBefore(clock, null);
+        clock.innerHTML = `
 1 half: ${Math.floor(
-        lessonTime[currentLesson - 1][0].start / 60
-    )}:${ (lessonTime[currentLesson - 1][0].start % 60) < 10
-        ? "0" + lessonTime[currentLesson - 1][0].start % 60
-        : lessonTime[currentLesson - 1][0].start % 60}
+            lessonTime[currentLesson - 1][0].start / 60
+        )}:${ (lessonTime[currentLesson - 1][0].start % 60) < 10
+            ? "0" + lessonTime[currentLesson - 1][0].start % 60
+            : lessonTime[currentLesson - 1][0].start % 60}
  -
 ${Math.floor(
-            lessonTime[currentLesson - 1][0].end / 60
-        )}:${ (lessonTime[currentLesson - 1][0].end % 60) < 10
-            ? "0" + lessonTime[currentLesson - 1][0].end % 60
-            : lessonTime[currentLesson - 1][0].end % 60}
+                lessonTime[currentLesson - 1][0].end / 60
+            )}:${ (lessonTime[currentLesson - 1][0].end % 60) < 10
+                ? "0" + lessonTime[currentLesson - 1][0].end % 60
+                : lessonTime[currentLesson - 1][0].end % 60}
 <br>
 2 half: ${Math.floor(
-                lessonTime[currentLesson - 1][1].start / 60
-            )}:${ (lessonTime[currentLesson - 1][1].start % 60) < 10
-                ? "0" + lessonTime[currentLesson - 1][1].start % 60
-                : lessonTime[currentLesson - 1][1].start % 60}
+                    lessonTime[currentLesson - 1][1].start / 60
+                )}:${ (lessonTime[currentLesson - 1][1].start % 60) < 10
+                    ? "0" + lessonTime[currentLesson - 1][1].start % 60
+                    : lessonTime[currentLesson - 1][1].start % 60}
  -
 ${Math.floor(
-                    lessonTime[currentLesson - 1][1].end / 60
-                )}:${ (lessonTime[currentLesson - 1][1].end % 60) < 10
-                    ? "0" + lessonTime[currentLesson - 1][1].end % 60
-                    : lessonTime[currentLesson - 1][1].end % 60}`;
+                        lessonTime[currentLesson - 1][1].end / 60
+                    )}:${ (lessonTime[currentLesson - 1][1].end % 60) < 10
+                        ? "0" + lessonTime[currentLesson - 1][1].end % 60
+                        : lessonTime[currentLesson - 1][1].end % 60}`;
+    }
 }
-
 left();
 setInterval(left, 1000);
 //конец работы с часами
