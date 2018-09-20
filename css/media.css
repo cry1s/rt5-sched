@@ -13,8 +13,18 @@
 	}
 
 	.clock {
-		font-size: 0.5em;
-		padding: 3px;
+		font-size: 0.8em;
+		line-height: 1.3em;
+		padding: 6px;
+		text-align: center;
+		position: fixed;
+		height: 45px;
+		width: 250px;
+		right: 45px;
+		bottom: 45px;
+		left: auto;
+		top: auto;
+		border-radius: 25px;
 	}
 
 	.menu-wrapper {

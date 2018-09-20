@@ -137,7 +137,11 @@ window.onload = function () {
             break;
     }
     if (studyWeekNum !== undefined) {
-        upper.innerHTML = `${studyWeekNum % 4}${ (studyWeekNum === 3)
+        let weekNum = studyWeekNum % 4;
+        if(weekNum === 0){
+            weekNum = 4;
+        }
+        upper.innerHTML = `${weekNum}${ (weekNum === 3)
             ? "-я"
             : "-ая"} неделя`;
     }
@@ -228,16 +232,19 @@ function currentLessonFunc() {
 currentLessonFunc();
 setInterval(() => currentLessonFunc(), 1000 / 30);
 
-function left() {
-    if (currentLesson !== 0) {
 
-        var clock = document.createElement("div");
-        clock.className = "clock";
-        document
-            .getElementById("wrapper")
-            .insertBefore(clock, null);
+if (currentLesson !== 0) {
+    var clock = document.createElement("div");
+    clock.className = "clock";
+    document
+        .getElementById("wrapper")
+        .insertBefore(clock, null);
+}
+
+function left() {
+     if (currentLesson !== 0) {
         clock.innerHTML = `
-1 half: ${Math.floor(
+<p>1 half: ${Math.floor(
             lessonTime[currentLesson - 1][0].start / 60
         )}:${ (lessonTime[currentLesson - 1][0].start % 60) < 10
             ? "0" + lessonTime[currentLesson - 1][0].start % 60
@@ -259,7 +266,7 @@ ${Math.floor(
                         lessonTime[currentLesson - 1][1].end / 60
                     )}:${ (lessonTime[currentLesson - 1][1].end % 60) < 10
                         ? "0" + lessonTime[currentLesson - 1][1].end % 60
-                        : lessonTime[currentLesson - 1][1].end % 60}`;
+                        : lessonTime[currentLesson - 1][1].end % 60}</p>`;
     }
 }
 left();
