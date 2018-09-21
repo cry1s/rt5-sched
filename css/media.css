@@ -15,11 +15,11 @@
 	.clock {
 		font-size: 0.8em;
 		line-height: 1.3em;
-		padding: 6px;
-		text-align: center;
+		font-weight: 700;
+		padding: 6px 20px;
 		position: fixed;
 		height: 45px;
-		width: 250px;
+		width: 200px;
 		right: 45px;
 		bottom: 45px;
 		left: auto;
