@@ -66,9 +66,14 @@ body {
     margin: 0 0 5px;
 }
 
+.item .twocabs {
+	font-size: 0.8em;
+	line-height: 0.8em;
+}
+
 .weeks {
-    font-size: 0.8em;
-    line-height: 0.8em;
+    font-size: 0.9em;
+    line-height: 0.9em;
     height: 34px;
 }
 
