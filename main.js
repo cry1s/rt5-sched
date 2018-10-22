@@ -84,16 +84,18 @@ function showLesson(lesson) {
         }
     }
 
+
+	if(isOneWeek){
+
+	}
 }
 
 function showDay(day) {
     return `
 		<div class="item">
-			<p>${day
-        .name}</p>
+			<p>${day.name}</p>
 			<table class="timetable">
-				${day
-        .lessons
+				${day.lessons
         .map(showLesson)
         .join(" ")}
 			</table>
@@ -163,11 +165,11 @@ window.onload = function () {
         .color = "#39b9bf";
 };
 //конец дня недели работа с часами
-var date = new Date();
-var hours = date.getHours();
-var minutes = date.getMinutes();
 
 function currentLessonFunc() {
+	let date = new Date();
+	let hours = date.getHours();
+	let minutes = date.getMinutes();
     //определение пары
     currentTime = hours * 60 + minutes;
     let isPause;
@@ -230,7 +232,7 @@ function currentLessonFunc() {
 }
 
 currentLessonFunc();
-setInterval(() => currentLessonFunc(), 1000 / 30);
+setInterval(() => currentLessonFunc(), 5000);
 
 
 if (currentLesson !== 0) {
