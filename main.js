@@ -171,7 +171,7 @@ function currentLessonFunc() {
 	let hours = date.getHours();
 	let minutes = date.getMinutes();
     //определение пары
-    currentTime = hours * 60 + minutes;
+	currentTime = hours * 60 + minutes;
     let isPause;
     switch (true) {
         case(currentTime >= 480 - 3 && currentTime <= 580 - 3):
@@ -246,31 +246,25 @@ if (currentLesson !== 0) {
 function left() {
      if (currentLesson !== 0) {
         clock.innerHTML = `
-<p>1 half: ${Math.floor(
-            lessonTime[currentLesson - 1][0].start / 60
-        )}:${ (lessonTime[currentLesson - 1][0].start % 60) < 10
-            ? "0" + lessonTime[currentLesson - 1][0].start % 60
-            : lessonTime[currentLesson - 1][0].start % 60}
- -
-${Math.floor(
-                lessonTime[currentLesson - 1][0].end / 60
-            )}:${ (lessonTime[currentLesson - 1][0].end % 60) < 10
-                ? "0" + lessonTime[currentLesson - 1][0].end % 60
-                : lessonTime[currentLesson - 1][0].end % 60}
+<p>1 half: ${
+	zeroBefore(Math.floor(lessonTime[currentLesson - 1][0].start / 60))}:${zeroBefore(lessonTime[currentLesson - 1][0].start)}
+ - ${Math.floor(lessonTime[currentLesson - 1][0].end / 60)}:${ zeroBefore(lessonTime[currentLesson - 1][0].end)}
 <br>
-2 half: ${Math.floor(
-                    lessonTime[currentLesson - 1][1].start / 60
-                )}:${ (lessonTime[currentLesson - 1][1].start % 60) < 10
-                    ? "0" + lessonTime[currentLesson - 1][1].start % 60
-                    : lessonTime[currentLesson - 1][1].start % 60}
- -
-${Math.floor(
-                        lessonTime[currentLesson - 1][1].end / 60
-                    )}:${ (lessonTime[currentLesson - 1][1].end % 60) < 10
-                        ? "0" + lessonTime[currentLesson - 1][1].end % 60
-                        : lessonTime[currentLesson - 1][1].end % 60}</p>`;
+2 half: ${
+	zeroBefore(Math.floor(lessonTime[currentLesson - 1][1].start / 60))}:${zeroBefore(lessonTime[currentLesson - 1][1].start)}
+ - ${Math.floor(lessonTime[currentLesson - 1][1].end / 60)}:${zeroBefore(lessonTime[currentLesson - 1][1].end)}</p>`;
     }
 }
 left();
 setInterval(left, 1000);
 //конец работы с часами
+
+function zeroBefore(num){
+	let ret;
+	if(num % 60 < 10){
+		ret = "0" + num % 60;
+	} else {
+		ret = ""+num % 60;
+	}
+	return ret
+}
