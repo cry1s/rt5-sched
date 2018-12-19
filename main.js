@@ -138,8 +138,8 @@ window.onload = function () {
             lower.innerHTML = "воскресенье";
             break;
     }
-    if (studyWeekNum !== undefined) {
-        let weekNum = studyWeekNum % 4;
+	if (getWeekNum() !== undefined) {
+		let weekNum = getWeekNum() % 4;
         if(weekNum === 0){
             weekNum = 4;
         }
