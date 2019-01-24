@@ -228,7 +228,8 @@ td:nth-child(2) {
 	 transition: transform .5s ease 0.1s;
 }
 
-.nav-item:nth-child(3) {
+.nav-item:nth-child(3),
+.nav-item:nth-child(4) {
 	 transition: transform .5s ease 0.2s;
 }
 
@@ -246,6 +247,10 @@ td:nth-child(2) {
 
 .nav-item_active:nth-child(3) {
 	transform: translateX(60px);
+}
+
+.nav-item_active:nth-child(4) {
+	transform: translate(102px, 42px);
 }
 
 .modal-wrapper {
