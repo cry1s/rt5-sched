@@ -1,14 +1,54 @@
 //<p class=\"twocabs\">317</p><p class=\"twocabs\">319</p>
 
+let les = {
+	"cimpy": {
+		"name": "ЦиМПУ",
+		"room": "",
+	},
+	"ig": {
+		"name": "ИГ",
+		"room": "",
+	},
+	"msp": {
+		"name": "МСП",
+		"room": "",
+	},
+	"fiz": {
+		"name": "ФиЗ",
+		"room": "",
+	},
+	"opsist": {
+		"name": "ОПСиСТ",
+		"room": "",
+	},
+	"isp": {
+		"name": "ИСП",
+		"room": "",
+	},
+	"ksst": {
+		"name": "КССТ",
+		"room": "",
+	},
+	"tuids": {
+		"name": "ТУиДС",
+		"room": "",
+	},
+	"voennaja": {
+		"name": "Военная кафедра",
+		"room": "",
+	},
+}
+
+
 const TimeTable = [
 	{
 		name: "Понедельник",
 		lessons: [
 			"",
-			["ЦиМПУ", ""],
-			["ИГ", ""],
-			["Иг", ""],
-			["МСП", ""],
+			[les.cimpy.name, les.cimpy.room],
+			[les.ig.name, les.ig.room],
+			[les.ig.name, les.ig.room],
+			[les.msp.name, les.msp.room],
 		],
 	},
 	{
@@ -16,42 +56,42 @@ const TimeTable = [
 		lessons: [
 			"",
 			"",
-			["ЦиМПу", ""],
-			["ФиЗ", ""],
-			["ОПСиСТ", ""],
-			["ИСП", ""],
+			[les.cimpy.name, les.cimpy.room],
+			[les.fiz.name, les.fiz.room],
+			[les.opsist.name, les.opsist.room],
+			[les.isp.name, les.isp.room],
 		]
 	},	{
 		name: "Среда",
 		lessons: [
 			{
 				odd: ["", ""],
-				even: ["ОПСиСТ", "123"]
+				even: [les.opsist.name, les.opsist.room]
 			},
-			["КССТ", ""],
-			["ТУиДС Т", ""],
-			["МСП", ""],
+			[les.ksst.name, les.ksst.room],
+			[les.tuids.name, les.tuids.room],
+			[les.msp.name, les.msp.room],
 		]
 	},	{
 		name: "Четверг",
 		lessons: [
-			["ЦиМПУ", ""],
-			["ТУиДС", ""],
-			["ФиЗ", ""],
-			["КССТ", ""],
+			[les.cimpy.name, les.cimpy.room],
+			[les.tuids.name, les.tuids.room],
+			[les.fiz.name, les.fiz.room],
+			[les.ksst.name, les.ksst.room],
 		]
 	},	{
 		name: "Пятница",
 		lessons: [
-			["Военная кафедра", ""],
+			[les.voennaja.name, ""],
 		]
 	},	{
 		name: "Суббота",
 		lessons: [
 			"",
-			["МСП", ""],
-			["КССТ", ""],
-			["ФиЗ", ""],
+			[les.msp.name, les.msp.room],
+			[les.ksst.name, les.ksst.room],
+			[les.fiz.name, les.fiz.room],
 		]
 	},
 ];
