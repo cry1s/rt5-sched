@@ -65,6 +65,7 @@ const TimeTable = [
 		name: "Среда",
 		lessons: [
 			"",
+			"",
 			[les.ksst.name, les.ksst.room],
 			[les.tuids.name, les.tuids.room],
 			[les.msp.name, les.msp.room],
