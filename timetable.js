@@ -64,10 +64,7 @@ const TimeTable = [
 	},	{
 		name: "Среда",
 		lessons: [
-			{
-				odd: ["", ""],
-				even: [les.opsist.name, les.opsist.room]
-			},
+			"",
 			[les.ksst.name, les.ksst.room],
 			[les.tuids.name, les.tuids.room],
 			[les.msp.name, les.msp.room],
@@ -88,7 +85,10 @@ const TimeTable = [
 	},	{
 		name: "Суббота",
 		lessons: [
-			"",
+			{
+				odd: [les.opsist.name, les.opsist.room],
+				even: ["", ""]
+			},
 			[les.msp.name, les.msp.room],
 			[les.ksst.name, les.ksst.room],
 			[les.fiz.name, les.fiz.room],
