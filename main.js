@@ -24,44 +24,7 @@ function showLesson(lesson) {
 		`
 
     } else {
-        if (isOneWeek) {
-
-            if (studyWeekNum % 2 === 0) {
-                return `
-                <tr class="lesson" id="lessonLine">
-                    ${ (
-                    lesson === ""
-                )
-                    ? `
-                        <td class="lesson_item"></td>
-                        <td class="lesson_item"></td>
-                    `
-                    : `
-                        <td class="lesson_item">${lesson.even[0]}</td>
-                        <td class="lesson_item">${lesson.even[1]}</td>
-                    `}
-                </tr>
-                `
-            } else {
-                return `
-                <tr class="lesson" id="lessonLine">
-                    ${ (
-                    lesson === ""
-                )
-                    ? `
-                        <td class="lesson_item"></td>
-                        <td class="lesson_item"></td>
-                    `
-                    : `
-                        <td class="lesson_item">${lesson.odd[0]}</td>
-                        <td class="lesson_item">${lesson.odd[1]}</td>
-                    `}
-                </tr>
-                `
-            }
-
-        } else {
-            return `
+        return `
 				<tr class="lesson weeks">
 					<td class="lesson_item">
 					<div class="odd">
@@ -81,13 +44,8 @@ function showLesson(lesson) {
 				</td>
 			</tr>
 			`
-        }
+        
     }
-
-
-	if(isOneWeek){
-
-	}
 }
 
 function showDay(day) {

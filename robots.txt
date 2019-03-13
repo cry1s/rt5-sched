@@ -8,9 +8,3 @@ DirectoryIndex index.html
 # Redirects
  RewriteRule ^index.php$ / [QSA,R]
  RewriteRule ^index.html$ / [QSA,R]
-
-# Error files
-ErrorDocument 401 /error/401.php 
-ErrorDocument 403 /error/403.php 
-ErrorDocument 404 /error/404.php 
-ErrorDocument 500 /error/500.php
