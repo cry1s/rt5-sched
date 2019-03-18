@@ -1,12 +1,15 @@
 html, body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 canvas {
-  display: block;
+	display: block;
+	-webkit-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.37); 
+	box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.37);
 }
 body{
 	display:flex;
-  justify-content: center;
-  align-items: center;
+  	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
