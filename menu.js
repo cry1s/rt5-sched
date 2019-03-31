@@ -15,13 +15,3 @@ menu.addEventListener("click", () => {
 			.toggle("nav-item_active");
 	}
 });
-
-oneWeek_btn.addEventListener("click", () => {
-	event.preventDefault();
-	if (isOneWeek === false) {
-		isOneWeek = true;
-	} else {
-		isOneWeek = false;
-	}
-	draw();
-})

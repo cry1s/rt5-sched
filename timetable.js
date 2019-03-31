@@ -3,7 +3,7 @@
 let les = {
 	"cimpy": {
 		"name": "ЦиМПУ",
-		"room": "",
+		"room": "156",
 	},
 	"ig": {
 		"name": "ИГ",
@@ -11,7 +11,7 @@ let les = {
 	},
 	"msp": {
 		"name": "МСП",
-		"room": "",
+		"room": "123",
 	},
 	"fiz": {
 		"name": "ФиЗ",
@@ -19,15 +19,11 @@ let les = {
 	},
 	"opsist": {
 		"name": "ОПСиСТ",
-		"room": "",
-	},
-	"isp": {
-		"name": "ИСП",
-		"room": "",
+		"room": "123",
 	},
 	"ksst": {
 		"name": "КССТ",
-		"room": "",
+		"room": "219",
 	},
 	"tuids": {
 		"name": "ТУиДС",
@@ -59,7 +55,7 @@ const TimeTable = [
 			[les.cimpy.name, les.cimpy.room],
 			[les.fiz.name, les.fiz.room],
 			[les.opsist.name, les.opsist.room],
-			[les.isp.name, les.isp.room],
+			[les.msp.name, les.msp.room],
 		]
 	},	{
 		name: "Среда",
@@ -165,6 +161,28 @@ const lessonTime = [
 		{
 			start: (17 * 60) + 15,
 			end: (18 * 60)
+		}
+	],
+	//шестая
+	[
+		{
+			start: (18 * 60) + 15,
+			end: (19 * 60),
+		},
+		{
+			start: (19 * 60) + 10,
+			end: (19 * 60) + 55
+		}
+	],
+	//седьмая
+	[
+		{
+			start: (20 * 60) + 10,
+			end: (20 * 60) + 55,
+		},
+		{
+			start: (21 * 60) + 05,
+			end: (21 * 60) + 55
 		}
 	],
 

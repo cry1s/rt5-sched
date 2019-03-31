@@ -1,6 +1,4 @@
-//само расписание
-var group = 1,
-    wrapper = document.getElementById("app"),
+let wrapper = document.getElementById("app"),
     less = document.getElementById("lessonTime"),
     currentTime,
     currentLesson;
@@ -53,18 +51,14 @@ function showDay(day) {
 		<div class="item">
 			<p>${day.name}</p>
 			<table class="timetable">
-				${day.lessons
-        .map(showLesson)
-        .join(" ")}
+				${day.lessons.map(showLesson).join(" ")}
 			</table>
 		</div>
 	`
 }
 
 function draw() {
-    wrapper.innerHTML = `${TimeTable
-        .map(showDay)
-        .join("")}`;
+    wrapper.innerHTML = `${TimeTable.map(showDay).join("")}`;
 }
 
 draw();
