@@ -1,4 +1,4 @@
-const vars = [
+const vars1 = [
 	[0x01, 0xff],	//1
 	[0xC6, 0x83],	//2
 	[0xcd, 0xf4],	//3
@@ -15,36 +15,233 @@ const vars = [
 	[0x9a, 0x9b],	//14
 ];
 
+const task2 = [
+	{
+		"A": "2000",
+		"C": "lxi",
+		"D": "hl, 2030h",
+		"E": "21 30 20",
+		"F": 3
+	},
+	{
+		"A": "2003",
+		"C": "mvi",
+		"D": "d, 09h",
+		"E": "16 09",
+		"F": 2
+	},
+	{
+		"A": "2005",
+		"C": "mvi",
+		"D": "e, 10h",
+		"E": "1e 10",
+		"F": 2
+	},
+	{
+		"A": "2007",
+		"C": "mov",
+		"D": "m, d",
+		"E": "72",
+		"F": 1
+	},
+	{
+		"A": "2008",
+		"C": "inx",
+		"D": "hl",
+		"E": "23",
+		"F": 1
+	},
+	{
+		"A": "2009",
+		"C": "dcr",
+		"D": "e, 10h",
+		"E": "1d",
+		"F": 1
+	},
+	{
+		"A": "200a",
+		"C": "jnz",
+		"D": "m1",
+		"E": "c2 07 20",
+		"F": 3
+	},
+	{
+		"A": "200d",
+		"C": "lxi",
+		"D": "hl, 2030h",
+		"E": "21 30 20",
+		"F": 3
+	},
+	{
+		"A": "2010",
+		"C": "mvi",
+		"D": "e, 10h",
+		"E": "1e 10",
+		"F": 2
+	},
+	{
+		"A": "2012",
+		"C": "lxi",
+		"D": "sp, 2045h",
+		"E": "31 45 20",
+		"F": 3
+	},
+	{
+		"A": "2015",
+		"C": "mvi",
+		"D": "c, 00h",
+		"E": "0e 00",
+		"F": 2
+	},
+	{
+		"A": "2017",
+		"C": "call",
+		"D": "m3",
+		"E": "cd 1f 20",
+		"F": 3
+	},
+	{
+		"A": "201a",
+		"C": "dcr",
+		"D": "e",
+		"E": "1d",
+		"F": 1
+	},
+	{
+		"A": "201b",
+		"C": "jnz",
+		"D": "m2",
+		"E": "c2 17 20",
+		"F": 3
+	},
+	{
+		"A": "201e",
+		"C": "hlt",
+		"D": "",
+		"E": "76",
+		"F": 1
+	}
+]
+
+const task22 = [
+	{
+		"A": "201f",
+		"B": "m3:",
+		"C": "mov",
+		"D": "a,c",
+		"E": "79",
+		"F": 1
+	},
+	{
+		"A": "2020",
+		"B": "",
+		"C": "add",
+		"D": "m",
+		"E": "86",
+		"F": 1
+	},
+	{
+		"A": "2021",
+		"B": "",
+		"C": "inx",
+		"D": "hl",
+		"E": "23",
+		"F": 1
+	},
+	{
+		"A": "2022",
+		"B": "",
+		"C": "mov",
+		"D": "c,a",
+		"E": "4f",
+		"F": 1
+	},
+	{
+		"A": "2023",
+		"B": "",
+		"C": "ret",
+		"D": "",
+		"E": "c9",
+		"F": 1
+	}
+]
+
+
 const
 	setupMenu	= document.querySelector(".setup"),
 	input		= document.querySelector(".varin"),
 	start		= document.querySelector(".start"),
 	alt			= document.querySelector(".alt"),
-	out			= document.querySelector(".out"),
+	out			= document.querySelectorAll(".out"),
 	done_task	= document.querySelector(".done_task");
 
 start.onclick = () => {
+	//проверка наличия варианта
 	if (input.value == ""){
 		document.querySelector(".attention").classList.remove("hidden");
 		input.style.border = "1px solid #E32636"
 		return;
 	}
+
 	const
 		variant	= input.value,
-		c1		= vars[variant - 1][0],
-		c2		= vars[variant - 1][1];
-
-	out.innerHTML = `
-	<p>${c1.toString(16)}<sub>(16)</sub> = ${convToBin(c1)}<sub>(2)</sub> => ${goFirstTask(c1)}<sub>(2)</sub> = ${parseInt(goFirstTask(c1), 2).toString(16)}<sub>(16)</sub></p></p>
-	<p>${c2.toString(16)}<sub>(16)</sub> = ${convToBin(c2)}<sub>(2)</sub> => ${goFirstTask(c2)}<sub>(2)</sub> = ${parseInt(goFirstTask(c2), 2).toString(16)}<sub>(16)</sub></p>
+		c1		= vars1[variant - 1][0],
+		c2		= vars1[variant - 1][1];
+	let task2var;
+	console.log(parseFloat(variant, 10))
+	switch (parseFloat(variant, 10)) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+			task2var = 0x05;
+			break;
+		case 2:
+		case 4:
+		case 6:
+			task2var = 0x0a;
+			break;
+		case 8:
+		case 10:
+		case 12:
+		case 14:
+			task2var = 0x09;
+			break;
+		case 9:
+		case 11:
+		case 13:
+			task2var = 0x0d;
+			break;
+	
+		default:
+			alert("Some kinda error");
+			task2var = 0x05;
+			break;
+	}
+	//задание 1
+	out[0].innerHTML = `
+		<p>${c1.toString(16)}<sub>(16)</sub> = ${convToBin(c1)}<sub>(2)</sub> => ${goFirstTask(c1)}<sub>(2)</sub> = ${parseInt(goFirstTask(c1), 2).toString(16)}<sub>(16)</sub></p>
+		<p>${c2.toString(16)}<sub>(16)</sub> = ${convToBin(c2)}<sub>(2)</sub> => ${goFirstTask(c2)}<sub>(2)</sub> = ${parseInt(goFirstTask(c2), 2).toString(16)}<sub>(16)</sub></p>
 	`;
 
 	document.querySelectorAll(".variant").forEach((elem)=>{
 		elem.innerHTML = c1.toString(16);
 	});
-	//console.log(`${variant}, ${c1.toString(16)}, ${c2.toString(16)}`);
 
-	done_task.classList.toggle("hidden");
+	//задание 2
+	out[1].innerHTML = `
+		<p>${task2var.toString(16)}<sub>(16)</sub> => ${task2var}<sub>(10)</sub></p>
+		<p>10<sub>(16)</sub> => 16<sub>(10)</sub></p>
+		<p>${task2var} * 16 = ${task2var * 16}<sub>(10)</sub> = ${(task2var * 16).toString(16)}<sub>(16)</sub></p>
+	`
+
+
+	//команды для таблы
+	task2[2].D = `d, ${task2var.toString(16)}h`
+	document.querySelector(".out-table-1").insertBefore(createTable(task2), null);
+	document.querySelector(".out-table-2").insertBefore(createTable(task22), null);
+
+	//убрать модалку с вариантом
 	setupMenu.classList.toggle("hidden");
 }
 
@@ -79,4 +276,57 @@ function goFirstTask(num){
 
 function convToBin(num) {
 	return num.toString(2).padStart(8, "0");
+}
+
+function createTable(arrayOfCommands) {
+	let head = [
+		{
+			"A": "Адрес",
+			"B": "Метка",
+			"C": "Команда",
+			"D": "Операнд",
+			"E": "Машинный код",
+			"F": "Число байтов/тактов",
+			"G": "Комментарий"
+		},
+		{
+			"A": "1",
+			"B": "2",
+			"C": "3",
+			"D": "4",
+			"E": "5",
+			"F": "6"
+		}
+	];
+	arrayOfCommands = head.concat(arrayOfCommands);
+	let table = document.createElement("table");
+
+	for(let i = 0; i < arrayOfCommands.length; i++){
+		table.insertBefore( createTr(arrayOfCommands[i]), null );
+	}
+
+	function createTr(obj) {
+		let
+			tr = document.createElement("tr"),
+			td = [];
+		for(let i = 0; i < 7; i++){
+			td.push(document.createElement("td"));
+		};
+
+		td[0].innerHTML = obj.A || adres;
+		td[1].innerHTML = obj.B || "";
+		td[2].innerHTML = obj.C || "";
+		td[3].innerHTML = obj.D || "";
+		td[4].innerHTML = obj.E || "";
+		td[5].innerHTML = obj.F || "";
+		td[6].innerHTML = obj.G || "";
+
+		for(let i = 0; i < td.length; i++){
+			tr.insertBefore(td[i], null);
+		}
+
+		return tr;
+	}
+
+	return table;
 }
