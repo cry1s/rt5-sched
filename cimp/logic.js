@@ -210,6 +210,12 @@ const
 	out			= document.querySelectorAll(".out"),
 	done_task	= document.querySelector(".done_task");
 
+window.onload = () => {
+	if(localStorage.getItem("taskvar") != null){
+		input.value = localStorage.getItem("taskvar");
+	}
+}
+
 start.onclick = () => {
 	//проверка наличия варианта
 	if (input.value == ""){
@@ -217,11 +223,13 @@ start.onclick = () => {
 		input.style.border = "1px solid #E32636"
 		return;
 	}
-
 	const
-		variant	= input.value,
-		c1		= vars1[variant - 1][0],
-		c2		= vars1[variant - 1][1];
+	variant	= input.value,
+	c1		= vars1[variant - 1][0],
+	c2		= vars1[variant - 1][1];
+
+	localStorage.setItem("taskvar", variant);
+	
 	let task2var;
 	switch (parseFloat(variant, 10)) {
 		case 1:
@@ -337,7 +345,6 @@ function createTable(arrayOfCommands) {
 	];
 	// arrayOfCommands = head.concat(arrayOfCommands);
 	let table = document.createElement("table");
-	debugger;
 	for(let i = 0; i < head.length; i++){
 		table.insertBefore(createTr(head[i], false), null )
 	}
