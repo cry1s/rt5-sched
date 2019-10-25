@@ -1,50 +1,14 @@
 //<p class=\"twocabs\">317</p><p class=\"twocabs\">319</p>
-
-let les = {
-	"cimpy": {
-		"name": "ЦиМПУ",
-		"room": "156",
-	},
-	"ig": {
-		"name": "ИГ",
-		"room": "",
-	},
-	"msp": {
-		"name": "МСП",
-		"room": "123",
-	},
-	"fiz": {
-		"name": "ФиЗ",
-		"room": "",
-	},
-	"opsist": {
-		"name": "ОПСиСТ",
-		"room": "123",
-	},
-	"ksst": {
-		"name": "КССТ",
-		"room": "219",
-	},
-	"tuids": {
-		"name": "ТУиДС",
-		"room": "",
-	},
-	"voennaja": {
-		"name": "Военная кафедра",
-		"room": "",
-	},
-}
-
-
 const TimeTable = [
 	{
 		name: "Понедельник",
 		lessons: [
 			"",
-			[les.cimpy.name, les.cimpy.room],
-			[les.ig.name, les.ig.room],
-			[les.ig.name, les.ig.room],
-			[les.msp.name, les.msp.room],
+			"",
+			"",
+			["ПОММС", 325],
+			["Экономика организации", 307],
+			["Основы менеджмента", 325]
 		],
 	},
 	{
@@ -52,43 +16,51 @@ const TimeTable = [
 		lessons: [
 			"",
 			"",
-			[les.cimpy.name, les.cimpy.room],
-			[les.fiz.name, les.fiz.room],
-			[les.opsist.name, les.opsist.room],
-			[les.msp.name, les.msp.room],
+			{
+				odd: ["ИСиБД", 325],
+				even: ["ПОММС", 325]
+			},
+			["ООСиЭС", 309],
+			{
+				odd: ["ФиЗ", "с/з"],
+				even: ["ООСиЭС", 309]
+			},
+			["Ин. яз.", "<p class=\"twocabs\">213</p><p class=\"twocabs\">215</p>"]
 		]
 	},	{
 		name: "Среда",
 		lessons: [
 			"",
 			"",
-			[les.ksst.name, les.ksst.room],
-			[les.tuids.name, les.tuids.room],
-			[les.msp.name, les.msp.room],
+			{
+				odd: ["Основы менеджмента", 314],
+				even: ["", ""]
+			},
+			["Ин. яз.", "<p class=\"twocabs\">213</p><p class=\"twocabs\">205</p>"],
+			["КП и ЯП", 323],
+			["Экономика организации", 307]
 		]
 	},	{
 		name: "Четверг",
 		lessons: [
-			[les.cimpy.name, les.cimpy.room],
-			[les.tuids.name, les.tuids.room],
-			[les.fiz.name, les.fiz.room],
-			[les.ksst.name, les.ksst.room],
+			"",
+			["ИСиБД", 325],
+			["ИСиБД", 325],
+			["ПОММС", 325],
+			["ФиЗ", "с/з"]
 		]
 	},	{
 		name: "Пятница",
 		lessons: [
-			[les.voennaja.name, ""],
+			["Военная кафедра", ""],
 		]
 	},	{
 		name: "Суббота",
 		lessons: [
-			{
-				odd: [les.opsist.name, les.opsist.room],
-				even: ["", ""]
-			},
-			[les.msp.name, les.msp.room],
-			[les.ksst.name, les.ksst.room],
-			[les.fiz.name, les.fiz.room],
+			"",
+			"",
+			["ИСиБД", 325],
+			["Ин. яз.", "<p class=\"twocabs\">213</p><p class=\"twocabs\">215</p>"]
 		]
 	},
 ];
