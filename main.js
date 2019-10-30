@@ -84,6 +84,7 @@ db.ref('/').once('value').then(function (ans) {
 
 db.ref('/').on("value", newData => {
 	draw(newData.val());
+	loadDone();
 })
 
 //конец построения таблицы расписания день недели
