@@ -1,3 +1,18 @@
+//firebase
+const firebaseConfig = {
+	apiKey: "AIzaSyBha4mcbQX96CwqAvl2j-1ja3E-N8ExKmk",
+	authDomain: "sw-721.firebaseapp.com",
+	databaseURL: "https://sw-721.firebaseio.com",
+	projectId: "sw-721",
+	storageBucket: "sw-721.appspot.com",
+	messagingSenderId: "30613357636",
+	appId: "1:30613357636:web:4b2b178ab9168ad5766811"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+//firebase end
+
+const db = firebase.database();
 let wrapper = document.getElementById("app"),
     less = document.getElementById("lessonTime"),
     currentTime,
@@ -57,13 +72,22 @@ function showDay(day) {
 	`
 }
 
-function draw() {
-    wrapper.innerHTML = `${TimeTable.map(showDay).join("")}`;
+function draw(time) {
+    wrapper.innerHTML = `${time.map(showDay).join("")}`;
 }
 
-draw();
+draw(TimeTable);
+db.ref('/').once('value').then(function (ans) {
+	draw(ans.val());
+	loadDone();
+});
+
+db.ref('/').on("value", newData => {
+	draw(newData.val());
+})
+
 //конец построения таблицы расписания день недели
-window.onload = function () {
+function loadDone() {
     let lower = document.getElementById("lower");
     let upper = document.getElementById("upper");
     let day = (new Date()).getDay();

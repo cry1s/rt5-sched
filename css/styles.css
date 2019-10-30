@@ -132,7 +132,7 @@ td:nth-child(2) {
 
 .menu-wrapper {
     position: absolute;
-    left: 40px;
+    left: calc(50% - 430px);
     top: 40px;
     z-index: 2;
 }
