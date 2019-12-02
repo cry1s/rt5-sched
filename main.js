@@ -116,7 +116,7 @@ function loadDone() {
             break;
     }
 	if (getWeekNum() !== undefined) {
-		let weekNum = (getWeekNum() - 2) % 4;
+		let weekNum = (getWeekNum() - 1) % 4;
         if(weekNum === 0){
             weekNum = 4;
         }
