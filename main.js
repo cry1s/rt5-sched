@@ -116,10 +116,11 @@ function loadDone() {
             break;
     }
 	if (getWeekNum() !== undefined) {
-		let weekNum = (getWeekNum() - 1) % 4;
+		let weekNum = (getWeekNum()) % 4 -2;
         if(weekNum === 0){
             weekNum = 4;
-        }
+		}
+		if(weekNum<0) weekNum += 4;
         upper.innerHTML = `${weekNum}${ (weekNum === 3)
             ? "-я"
             : "-ая"} неделя`;
