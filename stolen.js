@@ -8,6 +8,6 @@ function getWeekNum() {
 	firstDay = firstDay.getTime() - day * firstDay.getDay();
 	let now = new Date().getTime();
 
-	week = Math.floor((now - firstDay) / weekMil);
+	week = Math.floor((now - firstDay) / weekMil) - 1;
 	return week;
 }
