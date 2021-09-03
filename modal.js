@@ -27,3 +27,7 @@ for (let i = 0; i < lessonTime.length; i++) {
 		zeroBefore(Math.floor(lessonTime[i][1].end 		/ 60))}:${zeroBefore(lessonTime[i][1].end 		% 60)}`;
     mcont.appendChild(tempElement);
 }
+
+let tempElement = document.createElement("p");
+tempElement.innerHTML = `... - перерыв 5 мин`;
+mcont.appendChild(tempElement);

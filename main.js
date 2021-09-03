@@ -28,6 +28,7 @@ function showLesson(lesson) {
 					<div class="odd">
 					<span class="lil">1,3</span> ${lesson.odd[0]}
 				</div>
+                <hr>
 				<div class="even">
 					<span class="lil">2,4</span> ${lesson.even[0]}
 				</div>
@@ -36,6 +37,7 @@ function showLesson(lesson) {
 				<div class="odd">
 					${lesson.odd[1]}
 				</div>
+                    <hr>
 				<div class="even">
 					${lesson.even[1]}
 				</div>
