@@ -93,7 +93,6 @@ function loadDone() {
             lower.innerHTML = "воскресенье";
             break;
     }
-    console.log("baba");
 	if (getWeekNum() !== undefined) {
         
 		let weekNum = (getWeekNum()) % 4 -1;
@@ -127,6 +126,7 @@ function loadDone() {
 function currentLessonFunc() {
 	let date = new Date();
 	let hours = date.getHours();
+    console.log(hours);
 	let minutes = date.getMinutes();
     //определение пары
 	currentTime = hours * 60 + minutes;
