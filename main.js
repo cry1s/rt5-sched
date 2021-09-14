@@ -9,12 +9,7 @@ function showLesson(lesson) {
 
         return `
 			<tr class="lesson" id="lessonLine">
-				${ (lesson === "")
-            ? `
-					<td class="lesson_item"></td>
-					<td class="lesson_item"></td>
-				`
-            : `
+				${` <td class="lesson_item">${lesson.time}</td>
 					<td class="lesson_item">${lesson[0]}</td>
 					<td class="lesson_item">${lesson[1]}</td>
 				`}
@@ -24,6 +19,7 @@ function showLesson(lesson) {
     } else {
         return `
 				<tr class="lesson weeks">
+                    <td class="lesson_item">${lesson.time}</td>
 					<td class="lesson_item">
 					<div class="odd">
 					<span class="lil">1,3</span> ${lesson.odd[0]}
@@ -63,8 +59,23 @@ function draw(time) {
      wrapper.innerHTML = `${time.map(showDay).join("")}`;
 }
 
+function appendTime() {
+    TimeTable.map(day => {
+        lessons = day["lessons"];
+        console.log(day.name, lessons.length)
+        for (let i = 0; i < lessons.length; i++) {
+            if (!lessons[i].time) {
+                time = `${zeroBefore(Math.floor(lessonTime[i][0].start 	/ 60))}:${zeroBefore(lessonTime[i][0].start 	% 60)}\n`+
+                    `${zeroBefore(Math.floor(lessonTime[i][1].end 	/ 60))}:${zeroBefore(lessonTime[i][1].end 	% 60)}`
+                console.log(time);
+                lessons[i].time = time;
+            }
+        }
+    })
+}
+appendTime();
 draw(TimeTable);
-loadDone()
+loadDone();
 //конец построения таблицы расписания день недели
 function loadDone() {
     let lower = document.getElementById("lower");

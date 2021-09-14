@@ -97,10 +97,18 @@ td {
 }
 
 td:nth-child(1) {
-    border-radius: 5px 0 0 5px;
+    font-size: 0.9rem;
+    line-height: 1em;
+    width: 18%;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
 }
 
 td:nth-child(2) {
+    border-radius: 5px 0 0 5px;
+}
+
+td:nth-child(3) {
     width: 16%;
     text-align: center;
     border-radius: 0 5px 5px 0;
