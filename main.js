@@ -106,12 +106,11 @@ function loadDone() {
     }
 	if (getWeekNum() !== undefined) {
         
-		let weekNum = (getWeekNum()) % 4 -1;
-        if(weekNum === 0){
-            weekNum = 4;
+		let weekNum = (getWeekNum()) - 33;
+        if(weekNum < 0){
+            weekNum += 52;
 		}
-		if(weekNum<0) weekNum += 4;
-        upper.innerHTML = `${weekNum}${ (weekNum === 3)
+        upper.innerHTML = `${weekNum}${ (weekNum % 100 !== 13 && weekNum % 10 === 3)
             ? "-я"
             : "-ая"} неделя`;
     }
@@ -140,7 +139,7 @@ function currentLessonFunc() {
     console.log(hours);
 	let minutes = date.getMinutes();
     //определение пары
-	currentTime = hours * 60 + minutes;
+	currentTime = hours * 60 + minutes - 693;
     let isPause;
     switch (true) {
         case(currentTime >= 480 - 3 && currentTime <= 580 - 3):
@@ -183,7 +182,7 @@ function currentLessonFunc() {
                 .childNodes[3]
                 .childNodes[1]
                 .childNodes[currentLesson * 2 - 2]
-                .childNodes[1]
+                .childNodes[3]
                 .style
                 .background = "url(img/bg_blue.png) no-repeat -" + x + "px";
         } else {
@@ -192,7 +191,7 @@ function currentLessonFunc() {
                 .childNodes[3]
                 .childNodes[1]
                 .childNodes[currentLesson * 2 - 2]
-                .childNodes[1]
+                .childNodes[3]
                 .style
                 .background = "url(img/bg.png) no-repeat -" + x + "px";
         }
