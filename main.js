@@ -139,7 +139,7 @@ function currentLessonFunc() {
     console.log(hours);
 	let minutes = date.getMinutes();
     //определение пары
-	currentTime = hours * 60 + minutes - 693;
+	currentTime = hours * 60 + minutes;
     let isPause;
     switch (true) {
         case(currentTime >= 480 - 3 && currentTime <= 580 - 3):
