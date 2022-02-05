@@ -158,10 +158,6 @@ function currentLessonFunc() {
             currentLesson = 4;
             isPause = currentTime > 14 * 60 + 55 && currentTime < 15 * 60 + 5;
             break;
-        case(currentTime >= 980 - 3 && currentTime <= 1080 - 3):
-            currentLesson = 5;
-            isPause = currentTime > 17 * 60 + 5 && currentTime < 17 * 60 + 15;
-            break;
         default:
             currentLesson = 0;
     }
@@ -170,6 +166,7 @@ function currentLessonFunc() {
     if (currentLesson === 0) {
         document.body.style.backgroundColor = "#edeef0";
     } else {
+        console.log("para", currentLesson);
         let percent = (currentTime - lessonTime[currentLesson - 1][0].start) / (
             lessonTime[currentLesson - 1][1].end - lessonTime[currentLesson - 1][0].start
         );
