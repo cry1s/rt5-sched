@@ -68,10 +68,13 @@ const TimeTable = [{
 
 TimeTable[2].lessons[0].time = "13:50\n15:25";
 TimeTable[2].lessons[1].time = "17:30";
+
 TimeTable[3].lessons[0].time = "08:30\n10:05";
 TimeTable[3].lessons[1].time = "10:45\n12:20";
 TimeTable[3].lessons[2].time = "13:05\n14:40";
 TimeTable[3].lessons[3].time = "14:50\n16:25";
+
+TimeTable[5].lessons[0].time = "10:00";
 //конец расписания
 /*
 пустая пара добавляется с помошью ""

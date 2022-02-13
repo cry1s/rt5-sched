@@ -30,14 +30,14 @@
                     target="_blank"
                     class="nav-item"
                     title="Учебники">
-                    <i class="fas fa-download"></i>
+                    <i class="fa fa-book"></i>
                 </a>
-                <a href="#" id="modal" class="nav-item">
+                <a href="#" id="modal" class="nav-item" title="Время занятий">
                     <i class="far fa-clock"></i>
                 </a>
-				<!-- <a href="https://free102918.ispsite.ru/" class="nav-item" title="лабы по кпияп">
-					<i class="fas fa-times"></i>
-				</a> -->
+				<a href="#" id="anime" class="nav-item" title="Преподаватели">
+					<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+				</a>
             </nav>
             <div class="menu-button" id="menu-open">
                 <a href="#" class="menu-burger" id="menu-burger"></a>
@@ -47,7 +47,7 @@
         <div id="wrapper" class="wrapper">
             <div class="header">
                 <div>
-                    <h1 id="title" class="header__text">РТ5-11Б</h1>
+                    <h1 id="title" class="header__text">РТ5</h1>
                     <div class="header-info">
                         <p id="upper"></p>
                         <p id="lower"></p>
@@ -57,11 +57,13 @@
 
             <div class="schedule" id="app"></div>
             <div class="schedule" id="lessonTime"></div>
-
         </div>
+
         <div class="schedule">
             <a href="https://github.com/SW-721/sw-721.github.io">Спасибо</a>
         </div>
+
+
         <div class="modal-wrapper" id="modal-wrapper">
             <div class="modal-item" onclick="event.stopPropagation()">
                 <div class="modal-close-btn">X</div>
@@ -74,6 +76,14 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal-wrapper" id="anime-wrapper">
+            <div class="modal-item" onclick="event.stopPropagation()">
+                <div class="modal-close-btn anime-close-btn">X</div>
+                <div id="anime-content" class="modal-content"></div>
+            </div>
+        </div>
+
 		
 	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
@@ -85,6 +95,7 @@
         <script src="menu.js"></script>
 		<script src="main.js"></script>
 		<script src="modal.js"></script>
+        <script src="prepods.js"></script>
     </body>
 
 </html>

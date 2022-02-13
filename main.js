@@ -140,60 +140,8 @@ function currentLessonFunc() {
 	let minutes = date.getMinutes();
     //определение пары
 	currentTime = hours * 60 + minutes;
-    let isPause;
-    switch (true) {
-        case(currentTime >= 480 - 3 && currentTime <= 580 - 3):
-            currentLesson = 1;
-            isPause = currentTime > 8 * 60 + 45 && currentTime < 8 * 60 + 55;
-            break;
-        case(currentTime >= 595 - 3 && currentTime <= 695 - 3):
-            currentLesson = 2;
-            isPause = currentTime > 10 * 60 + 40 && currentTime < 10 * 60 + 50;
-            break;
-        case(currentTime >= 735 - 3 && currentTime <= 835 - 3):
-            currentLesson = 3;
-            isPause = currentTime > 13 * 60 && currentTime < 13 * 60 + 10;
-            break;
-        case(currentTime >= 850 - 3 && currentTime <= 950 - 3):
-            currentLesson = 4;
-            isPause = currentTime > 14 * 60 + 55 && currentTime < 15 * 60 + 5;
-            break;
-        default:
-            currentLesson = 0;
-    }
-    //конце определения пары
-
-    if (currentLesson === 0) {
-        document.body.style.backgroundColor = "#edeef0";
-    } else {
-        console.log("para", currentLesson);
-        let percent = (currentTime - lessonTime[currentLesson - 1][0].start) / (
-            lessonTime[currentLesson - 1][1].end - lessonTime[currentLesson - 1][0].start
-        );
-        let x = 246 - (percent * 246);
-
-        document.body.style.backgroundColor = "#e9f0ed";
-        if (isPause) {
-            wrapper
-                .childNodes[(new Date().getDay()) * 2 - 1]
-                .childNodes[3]
-                .childNodes[1]
-                .childNodes[currentLesson * 2 - 2]
-                .childNodes[3]
-                .style
-                .background = "url(img/bg_blue.png) no-repeat -" + x + "px";
-        } else {
-            wrapper
-                .childNodes[(new Date().getDay()) * 2 - 1]
-                .childNodes[3]
-                .childNodes[1]
-                .childNodes[currentLesson * 2 - 2]
-                .childNodes[3]
-                .style
-                .background = "url(img/bg.png) no-repeat -" + x + "px";
-        }
-    }
-    //конец подкраски фона пары
+    currentLesson = 0;
+    document.body.style.backgroundColor = "#edeef0";
 }
 
 currentLessonFunc();
