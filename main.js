@@ -106,7 +106,7 @@ function loadDone() {
     }
 	if (getWeekNum() !== undefined) {
         
-		let weekNum = (getWeekNum()) - 33;
+		let weekNum = (getWeekNum()) - 4;
         if(weekNum < 0){
             weekNum += 52;
 		}
