@@ -1,4 +1,2 @@
-.idea/
-.target/
-.out/
-.vscode/
+/venv
+/.idea
